@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        @*<h4>Welcome to Student Management</h4>*@
+        <nav class="nav justify-content-start">
+            <a href="@Url.Action("Index","Home")" class="nav-link">Home</a>
+            <a href="@Url.Action("Index","Student")" class="nav-link">Register</a>
+            <a href="@Url.Action("login","Student")" class="nav-link">Login</a>
+            <a href="@Url.Action("About","Home")" class="nav-link">About</a>
+        </nav>
+    </div>
+    <br />
+    <div class="container body-content">
+        @RenderBody()
+        
+        <footer class="container border-danger position-absolute bottom-0 text-center"">
+            <p>&copy; @DateTime.Now.Year - Student Management App</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

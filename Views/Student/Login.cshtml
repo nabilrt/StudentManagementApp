@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Log into your system</h4>
+<small>Please Enter Correct Credentials</small> <br /> <br />
+<form action="@Url.Action("studentLogin","Student")" method="post">
+    <div class="col-md-12">
+        <label class="form-label">Student ID</label>
+        <input type="text" value="" id="" name="id" placeholder="AIUB-STD-X" class="form-control" />
+    </div> <br />
+    <div class="col-md-12">
+        <label class="form-label">Password</label>
+        <input type="password" value="" id="pass" name="pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" class="form-control" />
+        <div class="form-check">
+            <input type="checkbox" value="" id="showPass" name="showPass" class="form-check-input" onclick="showPassword()" />
+            <label for="showPass" class="form-check-label">Show Password</label>
+        </div>
+    </div> <br />
+    <div class="col-md-12">
+        <input type="submit" value="Sign in" class="btn btn-outline-primary" />
+    </div>
+</form>
+<script>
+    function showPassword() {
+        var x = document.getElementById("pass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
