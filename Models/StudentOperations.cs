@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using static System.Net.Mime.MediaTypeNames;
 using WebGrease.Css.Ast.Selectors;
+using System.Web.ModelBinding;
 
 namespace Student_Management.Models
 {
@@ -17,6 +18,7 @@ namespace Student_Management.Models
         int count;
         public bool AddStudent(StudentModel student)
         {
+
             con = new SqlConnection(cs);
             SqlCommand cmd = new SqlCommand("Insert into Student Values(@studentID,@studentName,@studentEmail,@studentPass,@studentDOB)", con);
             cmd.CommandType = CommandType.Text;
@@ -88,6 +90,28 @@ namespace Student_Management.Models
             c.Close();
 
             return student;
+
+        }
+
+        public bool editStudent(StudentModel student)
+        {
+            con=new SqlConnection(cs);
+            string query = "Update Student set studentName=@studentName, studentEmail=@studentEmail, studentPass=@studentPass where studentID=@studentID";
+            SqlCommand cmd=new SqlCommand(query, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@studentID",student.studentID);
+            cmd.Parameters.AddWithValue("@studentName",student.studentName);
+            cmd.Parameters.AddWithValue("@studentEmail", student.studentEmail);
+            cmd.Parameters.AddWithValue("@studentPass", student.studentPass);
+            con.Open();
+            int a = cmd.ExecuteNonQuery();
+            con.Close();
+            if (a > 0)
+            {
+                return true;
+            }
+
+            return false;
 
         }
     }

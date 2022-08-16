@@ -182,6 +182,7 @@
     <Content Include="Views\Student\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutStudent.cshtml" />
     <Content Include="Views\Student\Dashboard.cshtml" />
+    <Content Include="Views\Student\StudentProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

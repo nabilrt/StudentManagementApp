@@ -1,27 +1,33 @@
-﻿
+﻿@model Student_Management.Models.StudentModel
 @{
     ViewBag.Title = "Student Registration";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h4>Student Registration Form</h4>
-<small>Please enter correct details</small><br />
+<small>Please enter correct details</small>
+<br />
 <form action="@Url.Action("createStudent","Student")" method="post" class="row g-3">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="col-md-12">
         <label class="form-label">Name</label>
         <input type="text" value="" id="" name="name" class="form-control" />
+        @Html.ValidationMessageFor(model => model.studentName, "", new { @class = "text-danger" })
     </div>
     <div class="col-md-12">
         <label class="form-label">Email</label>
         <input type="text" value="" id="" name="mail" class="form-control" />
+        @Html.ValidationMessageFor(model => model.studentEmail, "", new { @class = "text-danger" })
     </div>
     <div class="col-md-12">
         <label class="form-label">Password</label>
         <input type="password" value="" id="" name="pass" class="form-control" />
+        @Html.ValidationMessageFor(model => model.studentPass, "", new { @class = "text-danger" })
     </div>
     <div class="col-md-12">
         <label class="form-label">Date of Birth</label>
         <input type="date" value="" id="" name="dob" class="form-control" />
+        @Html.ValidationMessageFor(model => model.studentDOB, "", new { @class = "text-danger" })
     </div>
     <div class="col-md-12">
         <input type="submit" value="Save" class="btn btn-outline-dark" />
