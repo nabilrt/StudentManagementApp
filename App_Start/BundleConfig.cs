@@ -26,6 +26,13 @@ namespace Student_Management
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new Bundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                          "~/Content/bootstrap.css",
+                          "~/Content/ekimba.css",
+                          "~/Content/w3.css",
+                          "~/Content/font-awesome.min.css",
+                          "~/Content/site.css"));
         }
     }
 }

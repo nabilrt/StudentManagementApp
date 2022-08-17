@@ -4,6 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+
+    <link rel="stylesheet" href="E:\Student Management\Content\font-awesome.min.css">
+
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -12,8 +17,8 @@
         @*<h4>Welcome to Student Management</h4>*@
         <nav class="nav justify-content-start">
             <a href="@Url.Action("dashboard","Student")" class="nav-link">Dashboard</a>
-            <a href="#" class="nav-link">Courses</a>
-            <a href="#" class="nav-link">Enrolled Courses</a>
+            <a href="@Url.Action("Index","Course")" class="nav-link">Courses</a>
+            <a href="@Url.Action("EnrolledCourses","Course")" class="nav-link">Enrolled Courses</a>
             <a href="@Url.Action("editProfileView","Student")" class="nav-link">Profile</a>
             <a href="@Url.Action("logout","Student")" class="nav-link">Logout</a>
         </nav>

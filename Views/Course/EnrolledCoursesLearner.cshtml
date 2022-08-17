@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Student_Management.Models.EnrollmentDetailsModel>
+@{
+    ViewBag.Title = "EnrolledCoursesLearner";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2>All Enrolled Courses</h2> <br />
+<table class="table table-bordered table-sm">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th>
+                Course Code
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.courseCode
+                </td>
+
+                <td>
+                    <a href="#" class="btn btn-outline-info">Details</a>
+                </td>
+            </tr>
+        </tbody>
+
+    }
+
+</table>
+

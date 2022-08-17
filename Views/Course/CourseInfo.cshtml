@@ -1,0 +1,20 @@
+﻿@model Student_Management.Models.CourseModel
+@{
+    ViewBag.Title = "CourseInfo";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2>Course Enrollment Confirmation</h2><br />
+<h6>Course Details </h6><br />
+<p>Name : @Model.courseName</p>
+<p>Department : @Model.courseDept</p>
+<p>Credit(s) : @Model.courseCredit</p> 
+<p>Are you sure to enroll in this course?</p> 
+<form action="@Url.Action("EnrollStudent","Course")" method="post">
+    <input type="hidden" value="@Model.courseCode" name="code" />
+    <input type="submit" value="Yes" class="btn btn-outline-dark btn-sm"/>
+</form>
+&nbsp;
+<a href="#" class="btn btn-outline-danger btn-sm">Go Back</a>
+
+

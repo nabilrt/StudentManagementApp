@@ -50,6 +50,11 @@ namespace Student_Management
                     "{controller}/{action}/{id}",                           // URL with parameters
                     new { controller = "Student", action = "editProfileView", id = "" }  // Parameter defaults
                    );
+            routes.MapRoute(
+                    "Course",                                              // Route name
+                    "{controller}/{action}/{id}",                           // URL with parameters
+                    new { controller = "Course", action = "Index", id = "" }  // Parameter defaults
+                   );
         }
         protected void Application_Start()
         {
